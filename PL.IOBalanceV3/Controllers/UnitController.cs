@@ -31,7 +31,6 @@ namespace PL.IOBalanceV3.Controllers
         // GET: Unit
         public ActionResult Index()
         {
-            var list = _commonServices.GetAllUnits().ToList();
             return View();
         }
     }

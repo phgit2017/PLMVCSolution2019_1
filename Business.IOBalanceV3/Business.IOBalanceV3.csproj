@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonServices.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="Dto\CommonDetails.cs" />
     <Compile Include="Dto\CustomerDetails.cs" />
     <Compile Include="Dto\FilePasswordDetails.cs" />

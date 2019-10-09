@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,6 +22,16 @@ namespace Infrastructure.Utilities
         public static bool IsObjectNullOrEmpty(this object obj)
         {
             return obj.IsNull() || obj.ToString().IsEmptyString();
+        }
+
+        public static bool HasAnyValue(this object obj)
+        {
+            var type = obj.GetType();
+            var properties = type.GetProperties(BindingFlags.Public | BindingFlags.Instance);
+            var hasProperty = properties.Select(x => x.GetValue(obj, null))
+                                        .Any(x => !x.IsObjectNullOrEmpty());
+
+            return hasProperty;
         }
 
 

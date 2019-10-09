@@ -4,7 +4,7 @@
 }
 
 <link href="~/Content/datatables.css" rel="stylesheet" />
-<h2>Index</h2>
+<h2>Unit</h2>
 
 <table id="units-tables">
     <thead>
@@ -19,35 +19,11 @@
 
 @section scripts{
     <script type="text/javascript">
-    $(document).ready(function () {
-        $('#units-tables').DataTable({
-            ajax: {
-                url: '@Url.Action("GetDetails","Unit")',
-                type: 'POST',
-                dataSrc: 'data',
-                contentType: 'application/json',
-                dataType: 'json'
-            },
-            columns: [
-                {
-                    data: null, render: function (data, type, row) {
-                        return "<a href=''>" + data.UnitId + "</a>";
-                    }
-                },
-                { data: 'UnitId' },
-                { data: 'UnitDescription' }
-            ]
-        });
-
-        //$.ajax({
-        //    url: 'Unit/GetDetails',
-        //    type: 'POST',
-        //    success: function (data) {
-        //        console.log(data);
-        //    }
-        //});
-    });
+        window.adminOptions = {
+            getDetailsUrl: '@Url.Action("GetDetails", "Unit")'
+        };
     </script>
+    <script src="~/Scripts/iobalancescripts/common-management/unit.js"></script>
 }
 
 

@@ -54,6 +54,7 @@
     <Compile Include="Customer.cs" />
     <Compile Include="CustomerPrice.cs" />
     <Compile Include="FilePassword.cs" />
+    <Compile Include="Loggers.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Supplier.cs" />
     <Compile Include="Unit.cs" />

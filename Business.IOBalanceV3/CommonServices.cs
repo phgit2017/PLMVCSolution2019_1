@@ -22,6 +22,8 @@ namespace Business.IOBalanceV3
         IPLRepository<FilePassword> _filePasswords;
         IPLRepository<Supplier> _suppliers;
 
+        ILoggerDataServices<Customer> _loggerCustomers;
+
         IOBalanceDBV3Entity.Unit units;
         IOBalanceDBV3Entity.Customer customers;
         IOBalanceDBV3Entity.FilePassword filePasswords;
@@ -30,12 +32,15 @@ namespace Business.IOBalanceV3
         public CommonServices(IPLRepository<Unit> units, 
             IPLRepository<Customer> customers,
             IPLRepository<FilePassword> filePasswords,
-            IPLRepository<Supplier> suppliers)
+            IPLRepository<Supplier> suppliers,
+            ILoggerDataServices<Customer> loggerCustomers)
         {
             this._units = units;
             this._customers = customers;
             this._filePasswords = filePasswords;
             this._suppliers = suppliers;
+
+            this._loggerCustomers = loggerCustomers;
 
             this.units = new IOBalanceDBV3Entity.Unit();
             this.customers = new IOBalanceDBV3Entity.Customer();
@@ -110,6 +115,7 @@ namespace Business.IOBalanceV3
                 return false;
             }
 
+            //this._loggerCustomers.SaveLog(this.customers);
             return true;
         }
 

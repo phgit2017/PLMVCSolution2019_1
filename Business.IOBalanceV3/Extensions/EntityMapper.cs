@@ -114,5 +114,25 @@ namespace Business.IOBalanceV3.Extensions
 
             return entity;
         }
+
+        public static IOBalanceDBV3Entity.Loggers DtoToEntity(this LoggerDetails dto)
+        {
+            IOBalanceDBV3Entity.Loggers entity = null;
+
+            if (!dto.IsNull())
+            {
+                entity = new IOBalanceDBV3Entity.Loggers
+                {
+                    LoggerID = dto.LoggerId,
+                    LoggingMethod = dto.LoggingMethod,
+                    ColumnName = dto.ColumnName,
+                    DateCreated = dto.DateCreated,
+                    NewValue = dto.NewValue,
+                    OldValue = dto.OldValue
+                };
+            }
+
+            return entity;
+        }
     }
 }

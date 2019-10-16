@@ -9,6 +9,6 @@ namespace Business.IOBalanceV3.Dto
     public class FilePasswordDetails : CommonDetails
     {
         public long FilePasswordId { get; set; }
-        public string FilePassword { get; set; }
+        public string FilePasswordName { get; set; }
     }
 }

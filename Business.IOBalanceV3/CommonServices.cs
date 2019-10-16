@@ -17,30 +17,30 @@ namespace Business.IOBalanceV3
 {
     public partial class CommonServices
     {
-        IPLRepository<Units> _units;
-        IPLRepository<Customers> _customers;
-        IPLRepository<FilePasswords> _filePasswords;
-        IPLRepository<Suppliers> _suppliers;
+        IPLRepository<Unit> _units;
+        IPLRepository<Customer> _customers;
+        IPLRepository<FilePassword> _filePasswords;
+        IPLRepository<Supplier> _suppliers;
 
-        IOBalanceDBV3Entity.Units units;
-        IOBalanceDBV3Entity.Customers customers;
-        IOBalanceDBV3Entity.FilePasswords filePasswords;
-        IOBalanceDBV3Entity.Suppliers suppliers;
+        IOBalanceDBV3Entity.Unit units;
+        IOBalanceDBV3Entity.Customer customers;
+        IOBalanceDBV3Entity.FilePassword filePasswords;
+        IOBalanceDBV3Entity.Supplier suppliers;
 
-        public CommonServices(IPLRepository<Units> units, 
-            IPLRepository<Customers> customers,
-            IPLRepository<FilePasswords> filePasswords,
-            IPLRepository<Suppliers> suppliers)
+        public CommonServices(IPLRepository<Unit> units, 
+            IPLRepository<Customer> customers,
+            IPLRepository<FilePassword> filePasswords,
+            IPLRepository<Supplier> suppliers)
         {
             this._units = units;
             this._customers = customers;
             this._filePasswords = filePasswords;
             this._suppliers = suppliers;
 
-            this.units = new IOBalanceDBV3Entity.Units();
-            this.customers = new IOBalanceDBV3Entity.Customers();
-            this.filePasswords = new IOBalanceDBV3Entity.FilePasswords();
-            this.suppliers = new IOBalanceDBV3Entity.Suppliers();
+            this.units = new IOBalanceDBV3Entity.Unit();
+            this.customers = new IOBalanceDBV3Entity.Customer();
+            this.filePasswords = new IOBalanceDBV3Entity.FilePassword();
+            this.suppliers = new IOBalanceDBV3Entity.Supplier();
         }
         
     }
@@ -132,7 +132,7 @@ namespace Business.IOBalanceV3
                          {
                              CreatedBy = det.CreatedBy,
                              DateCreated = det.DateCreated,
-                             FilePassword = det.FilePassword,
+                             FilePasswordName = det.FilePasswordName,
                              FilePasswordId = det.FilePasswordID
                          };
 
@@ -203,7 +203,7 @@ namespace Business.IOBalanceV3
             }
 
             return true;
-        }
+        } 
 
     }
 

@@ -13,13 +13,13 @@ namespace Business.IOBalanceV3.Extensions
 {
     public static class EntityMapper
     {
-        public static IOBalanceDBV3Entity.Units DtoToEntity(this UnitDetails dto)
+        public static IOBalanceDBV3Entity.Unit DtoToEntity(this UnitDetails dto)
         {
-            IOBalanceDBV3Entity.Units entity = null;
+            IOBalanceDBV3Entity.Unit entity = null;
 
             if (!dto.IsNull())
             {
-                entity = new IOBalanceDBV3Entity.Units
+                entity = new IOBalanceDBV3Entity.Unit
                 {
                     UnitID = dto.UnitId,
                     UnitDescription = dto.UnitDescription
@@ -29,13 +29,13 @@ namespace Business.IOBalanceV3.Extensions
             return entity;
         }
 
-        public static IOBalanceDBV3Entity.Customers DtoToEntity(this CustomerDetails dto)
+        public static IOBalanceDBV3Entity.Customer DtoToEntity(this CustomerDetails dto)
         {
-            IOBalanceDBV3Entity.Customers entity = null;
+            IOBalanceDBV3Entity.Customer entity = null;
 
             if (!dto.IsNull())
             {
-                entity = new IOBalanceDBV3Entity.Customers
+                entity = new IOBalanceDBV3Entity.Customer
                 {
                     CustomerID = dto.CustomerId,
                     CreatedBy = dto.CreatedBy,
@@ -52,13 +52,13 @@ namespace Business.IOBalanceV3.Extensions
             return entity;
         }
 
-        public static IOBalanceDBV3Entity.Suppliers DtoToEntity(this SupplierDetails dto)
+        public static IOBalanceDBV3Entity.Supplier DtoToEntity(this SupplierDetails dto)
         {
-            IOBalanceDBV3Entity.Suppliers entity = null;
+            IOBalanceDBV3Entity.Supplier entity = null;
 
             if (!dto.IsNull())
             {
-                entity = new IOBalanceDBV3Entity.Suppliers
+                entity = new IOBalanceDBV3Entity.Supplier
                 {
                     SupplierID = dto.SupplierId,
                     CreatedBy = dto.CreatedBy,
@@ -74,18 +74,41 @@ namespace Business.IOBalanceV3.Extensions
             return entity;
         }
 
-        public static IOBalanceDBV3Entity.FilePasswords DtoToEntity(this FilePasswordDetails dto)
+        public static IOBalanceDBV3Entity.FilePassword DtoToEntity(this FilePasswordDetails dto)
         {
-            IOBalanceDBV3Entity.FilePasswords entity = null;
+            IOBalanceDBV3Entity.FilePassword entity = null;
 
             if (!dto.IsNull())
             {
-                entity = new IOBalanceDBV3Entity.FilePasswords
+                entity = new IOBalanceDBV3Entity.FilePassword
                 {
                     CreatedBy = dto.CreatedBy,
                     DateCreated = dto.DateCreated,
-                    FilePassword = dto.FilePassword,
+                    FilePasswordName = dto.FilePasswordName,
                     FilePasswordID = dto.FilePasswordId,
+                };
+            }
+
+            return entity;
+        }
+
+        public static IOBalanceDBV3Entity.Product DtoToEntity(this ProductDetails dto)
+        {
+            IOBalanceDBV3Entity.Product entity = null;
+
+            if (!dto.IsNull())
+            {
+                entity = new IOBalanceDBV3Entity.Product
+                {
+                    ProductID = dto.ProductId,
+                    ProductCode = dto.ProductCode,
+                    ProductDescription = dto.ProductDescription,
+                    ProductExtension = dto.ProductExtension,
+                    ProductQuantity = dto.ProductQuantity,
+                    CreatedBy = dto.CreatedBy,
+                    UpdatedBy = dto.UpdatedBy,
+                    DateCreated = dto.DateCreated,
+                    DateUpdated = dto.DateUpdated
                 };
             }
 

@@ -51,11 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Customers.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="CustomerPrice.cs" />
     <Compile Include="FilePassword.cs" />
-    <Compile Include="FilePasswords.cs" />
-    <Compile Include="Suppliers.cs" />
-    <Compile Include="Units.cs" />
+    <Compile Include="Product.cs" />
+    <Compile Include="Supplier.cs" />
+    <Compile Include="Unit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -56,10 +56,13 @@
     <Compile Include="Dto\CommonDetails.cs" />
     <Compile Include="Dto\CustomerDetails.cs" />
     <Compile Include="Dto\FilePasswordDetails.cs" />
+    <Compile Include="Dto\ProductDetails.cs" />
     <Compile Include="Dto\SupplierDetails.cs" />
     <Compile Include="Dto\UnitDetails.cs" />
     <Compile Include="Extensions\EntityMapper.cs" />
     <Compile Include="Interface\ICommonServices.cs" />
+    <Compile Include="Interface\IInventoryServices.cs" />
+    <Compile Include="InventoryServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

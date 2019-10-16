@@ -49,10 +49,12 @@ namespace DataAccess.Entities.Context
         }
 
         #region DbSets
-        public virtual DbSet<Units> Units { get; set; }
-        public virtual DbSet<Suppliers> Suppliers { get; set; }
-        public virtual DbSet<FilePasswords> FilePasswords { get; set; }
-        public virtual DbSet<Customers> Customers { get; set; }
+        public virtual DbSet<CustomerPrice> CustomerPrices { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<FilePassword> FilePasswords { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Supplier> Suppliers { get; set; }
+        public virtual DbSet<Unit> Units { get; set; }
         #endregion
     }
 }

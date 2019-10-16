@@ -6,18 +6,12 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class FilePassword
+    public partial class Unit
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public long FilePasswordID { get; set; }
+        public long UnitID { get; set; }
 
-        [Column("FilePassword")]
-        [Required]
-        [StringLength(128)]
-        public string FilePasswordName { get; set; }
-
-        public DateTime? DateCreated { get; set; }
-
-        public long? CreatedBy { get; set; }
+        [StringLength(16)]
+        public string UnitDescription { get; set; }
     }
 }

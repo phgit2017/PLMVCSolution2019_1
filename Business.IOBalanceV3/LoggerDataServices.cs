@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace Business.IOBalanceV3
 {
@@ -25,7 +26,9 @@ namespace Business.IOBalanceV3
             IOBalanceDBV3Entity.Loggers loggers,
             List<string> columnNames)
         {
-            object aa = typeof(T).GetType();
+            Type typeA = typeof(T).GetType();
+            FieldInfo[] fieldInfos = typeA.GetFields();
+
             foreach (var col in columnNames)
             {
 

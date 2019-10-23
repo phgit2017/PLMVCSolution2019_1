@@ -1,4 +1,5 @@
 ﻿using Business.IOBalanceV3.Dto;
+using DataAccess.Database.IOBalanceV3;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,8 @@ namespace Business.IOBalanceV3.Interface
 {
     public interface IInventoryServices
     {
-        bool SaveDetailsProducts(ProductDetails newDetails);
-        bool UpdateDetailsProducts(ProductDetails newDetails);
+        Product SaveDetailsProducts(ProductDetails newDetails);
+        Product UpdateDetailsProducts(ProductDetails newDetails);
         IQueryable<ProductDetails> GetAllProductDetails();
     }
 }

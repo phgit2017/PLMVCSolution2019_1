@@ -56,6 +56,8 @@
     <Compile Include="FilePassword.cs" />
     <Compile Include="Loggers.cs" />
     <Compile Include="Product.cs" />
+    <Compile Include="PurchaseOrder.cs" />
+    <Compile Include="PurchaseOrderDetail.cs" />
     <Compile Include="Supplier.cs" />
     <Compile Include="Unit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

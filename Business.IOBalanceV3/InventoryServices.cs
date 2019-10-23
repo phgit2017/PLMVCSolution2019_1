@@ -48,28 +48,28 @@ namespace Business.IOBalanceV3
             return result;
         }
 
-        public bool SaveDetailsProducts(ProductDetails newDetails)
+        public Product SaveDetailsProducts(ProductDetails newDetails)
         {
             this.products = newDetails.DtoToEntity();
-
-            if (this._products.Insert(this.products).IsNull())
+            var item = this._products.Insert(this.products);
+            if (item.IsNull())
             {
-                return false;
+                return null;
             }
 
-            return true;
+            return item;
         }
 
-        public bool UpdateDetailsProducts(ProductDetails newDetails)
+        public Product UpdateDetailsProducts(ProductDetails newDetails)
         {
             var details = newDetails.DtoToEntity();
-
-            if (_products.Update2(details).IsNull())
+            var item = _products.Update2(details);
+            if (item.IsNull())
             {
-                return false;
+                return null;
             }
 
-            return true;
+            return item;
         }
     }
 }
